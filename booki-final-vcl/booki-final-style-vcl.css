@@ -1,0 +1,397 @@
+/****** General ***********/
+* {
+    /* Ajout de cette bordure grise pour identifier les blocs et éléments (doit être retiré à la fin) */
+    border: solid 1px gray ;
+}
+
+
+
+:root {
+    --main-color: #0065FC;
+    /* Fond gris les + populauire et hebergement */
+    --main-bg-color: #F2F2F2;  
+    --filter-bg-color: #DEEBFF;
+}
+
+html {
+    /* Police générale du HTML */
+    font-family: 'Raleway', sans-serif;
+}
+
+.fa-solid {
+    /* Les étoiles bleues ? */
+}
+
+color: var(--main-color);
+body {
+    /* Corp du site avec tous les élements */
+    display: flex;
+    justify-content: center;
+    /* Ajout de "min-height = 100%" pour que le body s'adapte à tous les écrans */
+    min-height: 100%;
+}
+.main-container {
+    /* Attributs pour main-container */
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* SECTION HEADER */
+
+header {
+    /* Width 100% pour que ca s'adapte à tous les écrans */
+	width: 100%;
+    /* Height à 79px hauteur récupérée sur la maquette */
+    height: 79px; 
+}
+
+header img {  
+    /* Width et Height pour placer le logo correctement */
+    width: 61px;
+    height: 19px;
+    /* Ajout d'une margin pour placer le logo sans décaler la nav */
+    margin: 30px 0;
+}
+
+header,nav {
+    display: flex;
+    flex-direction: row;
+    justify-content :space-between;
+    align-items: flex-start
+}
+
+/* 
+1) Suppression de nav 
+2) align-items: flex-start déplacé de nav vers "header,nav" 
+3) remettre un nav ? (voir si c'est necessaire par la suite) */
+
+
+/**** SECTION NAV *****/
+
+/* Nav est le menu de navigation hebergement et activité */
+
+nav a {
+    padding: 0 68px;
+    margin-top: 16px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+nav a:hover {
+  color: #0065FC;
+  /* Comment faire une overline décalée de 16px du texte ? ou alors faire une "border" ? */
+  text-decoration-line: overline; 
+}
+
+
+
+/* ************ SECTION TITRE + SEARCH BAR *********** */
+
+.section-title {
+    /* Attributs pour tous les titres */
+    margin: 0;
+    /* mieux font-size en "rem" ? s'adapte mieux à tout type d'écran, surtout pour l'accessibilité, non ?*/
+    /* ou font-size: 1.37rem; soit 16px = 1rem */
+    font-size: 22px;
+}
+
+/* RECHERCHE POUR LES SEARCH-BAR (mais FINALEMENT C'EST UN fORMULAIRE)*/
+.search-bar {
+    display: flex;
+    width: 25%;
+    height: 49px;
+    background-color: white;
+    border-radius: 20px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+/* 
+.search-bar-content {
+    font-size: 18px;
+    margin: 14px 24px;
+} */
+
+.search-bar .fa-solid {
+    color: black;
+    padding: 15px 18px 16px 18px;
+    background-color: #F2F2F2;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+/* .input-text {
+    font-size: 18px;
+    background-color: #0065FC;
+    text-decoration-color: white;
+} */
+
+button {
+    font-size: 18px;
+    background-color: #0065FC;
+    text-decoration-color: white;
+    padding: 14px 16px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+} 
+
+.filtre-bar {
+    display: flex;
+    width: 75%;
+    height: 49px;
+    background-color: white;
+}
+
+.filtre-bar-content {
+    width: 75%;
+    height: 49px;
+    background-color: white;
+}
+
+
+/**** SECTION CARDS *****/
+
+/* "card" = vignette (Ici aspect général)*/
+.card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px;
+   /* Ici est une ombre autour des vignettes*/
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 16px;
+}
+
+.euro {
+    font-weight: 700;
+}
+
+.neutral-star {
+    /* Etoiles non colorées */
+    color: var(--main-bg-color)
+}
+
+/******  SECTION HEBERGEMENTS AND POPULAIRES ***********/
+.hebergements-and-populaires {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hebergements-and-populaires section {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/****** SECTION HEBERGEMENTS ***********/
+/* J'ai dupliqué tous les éléments "populaires" pour "hébergment" */
+
+.hebergements {
+    /* Espace que prend le bloc "Hébergement à Marseille" dans la largeur de la page pour laisser de la place à populaires et la marge entre les 2*/
+}
+
+.hebergements-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hebergements-cards {
+  display: flex;
+  margin-top: 33px;
+  margin-bottom: 33px;
+  justify-content: center;
+  /* flex-wrap: wrap ; Comment faire pour que ca soit responssive ou que le contenue se clae a la taille de la page ? */
+}
+
+.hebergements-cards img {
+    width: 250px;
+    height: 124px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.hebergements-cards .card-content {
+    width: 100%;
+    padding-left: 15px;
+/* suppression du "Display-flex" pour que les éléments soient les uns sur les autres */
+    flex-direction: row;
+    justify-content: flex-start ;
+    box-sizing: border-box;
+}
+
+
+.hebergements-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    width: 100%;
+}
+
+.hebergements-cards .card-subtitle {
+    margin: 0;
+}
+
+.hebergements-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+.afficher-plus {
+    font-size: 18px;
+    padding: 30px 0 ;
+}
+
+
+/****** SECTION POPULAIRES ***********/
+
+
+.populaires {
+    width: 32%;
+}
+
+.populaires-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.populaires-cards .card {
+    display: flex;
+    margin-top: 33px;
+}
+
+.populaires-cards img {
+    /* Attributs des images : 
+    - 33% de l'espace du cadre
+    - Hauteur de l'image 136px 
+    - Coin arrondi en haut et bas à gauche */
+    width: 33%;
+    height: 136px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.populaires-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.populaires-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+.populaires-cards .card-subtitle {
+    margin: 0;
+}
+
+.populaires-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+/* SECTION ACTIVITE */
+
+.activites {
+    padding: 30px;
+    }
+
+.activites-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.activites-cards {
+    display: flex;
+    margin-top: 33px;
+    margin-bottom: 33px;
+    justify-content: center;
+  }
+
+.activites-cards .card {
+  /* suppression du "Display-flex" pour que les éléments soient les uns sur les autres */
+}
+
+.activites-cards img {
+    width: 297px;
+    height: 380px;
+    border-top-left-radius: 20px;
+    }
+
+.card-content
+
+.activites-cards .card-content {
+    width: 67%;
+    padding-left: 15px;
+    /* suppression du "Display-flex" pour que les éléments soient les uns sur les autres */
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.activites-cards .card-title {
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+
+
+.activites-cards .card-rating {
+    margin-bottom: 5px;
+}
+
+
+
+/* Le code ci-dessous correspond à la version responsive uniquement */
+
+/****** Media queries ***********/
+/* Medium devices (tablets, less/equal than 1024px) */
+@media (max-width: 1024px) {
+    .hebergements-and-populaires {
+        flex-direction: column;
+    }
+
+    .hebergements {
+        width: 100%;
+    }
+
+    .populaires {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .populaires-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .populaires-cards a {
+        width: 30%;
+    }
+
+    .populaires-cards .card-title {
+        font-size: 14px;
+    }
+
+    .populaires-cards .card-subtitle {
+        font-size: 13px;
+    }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    /* ... */
+}
